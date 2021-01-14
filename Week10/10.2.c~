@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+  int n[],N,i,slm = 0;
+  printf("Number of elements: ");
+  scanf("%d", &N);
+  for (i=0; i<=n-1; i++)
+    { printf("%d. \n", i+1);
+      scanf("%d", &n[i]); }
+  for (i=1; i<=n-2; i++)
+    { if ((n[i] > n[i-1]) && (n[i] > n[i+1]))
+	{ slm = slm + n[i] }
+    }
+  printf("Total of local maximums: %d\n", slm);
+  

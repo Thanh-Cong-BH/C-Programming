@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+  float m,v;
+printf("Enter mass: ");
+scanf("%f", &m);
+printf("Enter velocity: ");
+scanf("%f", &v);
+printf("Kinetic energy: %d\n", KE(m,v));
+}
+
+{
+  int KE(float m, float v);
+  KE = m*v*v/2.0;
+  return KE;
+}
