@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int SpaceCounter(char input[])
+{
+  int i=0, N=0;
+  while (input[i] != 0)
+    {
+      if (input[i] ==' ')
+	{ N++; }
+    }
+  return N;
+}
+
+int main()
+{
+  char text[100];
+  printf("Enter text: ");
+  gets(text);
+  printf("There are %d blanks.\n", SpaceCounter(text));
+}
+  

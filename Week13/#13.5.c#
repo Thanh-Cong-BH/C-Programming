@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <string.h>
+
+int strend(char *s, char *t)
+{
+  int A=0, s_length=0, t_length=0;
+  s_length = strlen(s);
+  t_length = strlen(t);
+  if (t_length
+  
