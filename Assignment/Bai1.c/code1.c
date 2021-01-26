@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-long long Fac(int N)
+double Fac(int N)
 {
-    int i;
-    F=1;
+  int i;
+  double F=1;
     if (N == 0)
       {return 1 ;}
     for (i=1; i<=N; i++)
@@ -15,24 +15,30 @@ long long Fac(int N)
 int main()
 {
     int n, k;
-    long long A;
+    double A;
 
     FILE *input = fopen("ToHop.inp", "r");
     if (input == NULL)
-        return 0;
-    FILE *output = fopen("ToHop.out", "w");
+    {
+        printf("Reading error!\n");
+        return 1;
+    }
+    FILE *output = fopen("ToHop.out", "w+");
     if (output == NULL)
-        return 0;
-
+    {
+        printf("Output error!\n");
+        return 1;
+    }
+    
     while (fscanf(input, "%d %d\n", &n, &k) != EOF)
     {
         A = Fac(n) / (Fac(k) * Fac(n - k));
-        fprintf(output, "%lld\n", A);
+        fprintf(output, "%.0lf\n", A);
     }
     
     fclose(input);
     fclose(output);
 
-    return 1;
+    return 0;
 }
 
