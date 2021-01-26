@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 typedef struct
 {
@@ -16,18 +18,18 @@ int main()
 
     FILE *input = fopen("BAG.INP", "r");
     if (input == NULL)
-        return 0;
+        return 1;
 
     fscanf(input, "%d %d\n", &N, &W);
     object name[N], *order[N];
-    for (int i = 0; fscanf(input, "%d %d %c\n", &object[i].w, &object[i].v, &object[i].c) != EOF; i++)
+    for (int i = 0; fscanf(input, "%d %d %c\n", &name[i].w, &name[i].v, &name[i].c) != EOF; i++)
     {
-        object[i].unit = (float) object[i].v / object[i].w;
-        object[i].n = 0;
-        order[i] = &object[i];
+        name[i].unit = (float) name[i].v / name[i].w;
+        name[i].n = 0;
+        order[i] = &name[i];
     }
 
-    type *tmp;
+    object *tmp;
     for (int i = 0; i < N - 1; i++)
     {
         for (int j = i + 1; j < N; j++)
@@ -55,8 +57,8 @@ int main()
     printf("%d\n", max);
     for (int i = 0; i < N; i++)
     {
-        if (object[i].n != 0)
-            printf("%c %d\n", object[i].c, object[i].n);
+        if (name[i].n != 0)
+            printf("%c %d\n", name[i].c, name[i].n);
     }
 
     fclose(input);
