@@ -46,7 +46,7 @@ int main()
     {
         if (W > (*order[i]).w)
         {
-            (*order[i]).count = W / ((*order[i]).w);
+            (*order[i]).n = W / ((*order[i]).w);
             W %= (*order[i]).w;
             max += (*order[i]).v * ((*order[i]).n);
         }
@@ -55,7 +55,7 @@ int main()
     printf("%d\n", max);
     for (int i = 0; i < N; i++)
     {
-        if (object[i].count != 0)
+        if (object[i].n != 0)
             printf("%c %d\n", object[i].c, object[i].n);
     }
 
